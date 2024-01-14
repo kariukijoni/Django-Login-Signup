@@ -1,0 +1,23 @@
+{% extends "users/auth/auth_base.html" %}
+{% block title %}LogOut{% endblock title %}
+
+    {% load crispy_forms_tags %}
+
+{% block content %}
+
+    <div class="card card-outline card-primary">
+    <div class="card-header text-center">
+      <h1><b>Logged out...!</b></h1>
+    </div>
+    <div class="card-body">
+      
+      <p class="mb-0 ml-2">
+        <a href="{% url "users-login" %}" class="text-center">
+            Please login again
+        </a>
+      </p>
+    </div>
+    <!-- /.card-body -->
+  </div>
+
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends "users/auth/auth_base.html" %}
+{% block title %}Register{% endblock title %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="card card-outline card-primary">
+        <div class="card-header text-center">
+            <h1><b>Register</b></h1>
+        </div>
+    <div class="card-body">
+        <p class="login-box-msg">Register a new account</p>
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+                {{form|crispy}}
+
+            <div class="form-group">
+                <div class="col-4">
+                    <button type="submit" class="btn btn-outline-info btn-block">Register</button>
+                </div>
+            </div>
+        </form>
+
+        <a href="{% url "users-login" %}" class="text-center">I already have an account</a>
+        </div>
+        <!-- /.form-box -->
+    </div><!-- /.card -->
+</div>   
+
+{% endblock content %}
