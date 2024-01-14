@@ -1,0 +1,24 @@
+{% extends "users/base.html" %}
+{% block title %}Post-Create{% endblock title %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="card card-outline card-primary">
+    <div class="card-body">
+        <form method="POST">
+
+            {% csrf_token %}
+
+                {{form|crispy}}
+
+            <div class="form-group">
+                <div class="col-4">
+                    <button type="submit" class="btn btn-outline-info btn-block">Post</button>
+                </div>
+            </div>
+        </form>
+        </div>
+        <!-- /.form-box -->
+    </div><!-- /.card -->
+</div>   
+
+{% endblock content %}
